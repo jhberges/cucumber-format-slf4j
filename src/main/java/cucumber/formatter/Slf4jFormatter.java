@@ -1,4 +1,4 @@
-package no.ngt.tech.billing.einvoice.cucumber;
+package cucumber.formatter
 
 import gherkin.formatter.Formatter;
 import gherkin.formatter.Reporter;
@@ -19,13 +19,13 @@ import org.slf4j.LoggerFactory;
 import com.google.common.base.Strings;
 
 
-public class DummyFormat implements Reporter, Formatter {
+public class Slf4jFormatter implements Reporter, Formatter {
    private static final char PAD = '*';
    private static final String LINE = Strings.padStart("", 80, PAD);
    private static final String PFIX = PAD + " ";
-   private final Logger logger = LoggerFactory.getLogger(DummyFormat.class);
+   private final Logger logger = LoggerFactory.getLogger(Slf4jFormatter.class);
    private final Appendable out;
-   public DummyFormat(final Appendable out) {
+   public Slf4jFormatter(final Appendable out) {
       this.out = out;
    }
 
