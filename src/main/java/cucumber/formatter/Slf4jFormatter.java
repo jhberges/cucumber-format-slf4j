@@ -1,4 +1,4 @@
-package cucumber.formatter
+package cucumber.formatter;
 
 import gherkin.formatter.Formatter;
 import gherkin.formatter.Reporter;
@@ -12,11 +12,7 @@ import gherkin.formatter.model.ScenarioOutline;
 import gherkin.formatter.model.Step;
 
 import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.google.common.base.Strings;
+import java.util.logging.Logger;
 
 
 public class Slf4jFormatter implements Reporter, Formatter {
