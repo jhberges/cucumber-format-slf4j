@@ -16,11 +16,13 @@
 		<cucumber-jvm-version>1.1.5</cucumber-jvm-version>
 		<slf4j-version>1.7.5</slf4j-version>
 		<guava-version>15.0</guava-version>
+		<freemarker-version>2.3.20</freemarker-version>
+		<junit-version>4.11</junit-version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
-			<artifactId>slfj-api</artifactId>
+			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j-version}</version>
 		</dependency>
 		<dependency>
@@ -30,8 +32,24 @@
 		</dependency>
 		<dependency>
 		    <groupId>com.google.guava</groupId>
-		    <artifactId>guava-base</artifactId>
-		    <version>${guava-version></version>
+		    <artifactId>guava</artifactId>
+		    <version>${guava-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.freemarker</groupId>
+		    <artifactId>freemarker</artifactId>
+		    <version>${freemarker-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>${junit-version}</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber-jvm-version}</version>
 		</dependency>
 	</dependencies>
 </project>
