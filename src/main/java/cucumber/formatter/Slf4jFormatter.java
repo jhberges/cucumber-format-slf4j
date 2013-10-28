@@ -75,6 +75,7 @@ public class Slf4jFormatter implements Reporter, Formatter {
 	public void scenario(final Scenario scenario) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("scenario", scenario);
+		model.put("scenarioAsMap", scenario.toMap());
 		logIfHasOutcome(makeString("scenario", model));
 	}
 
