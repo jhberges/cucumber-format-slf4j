@@ -1,0 +1,12 @@
+<configuration>
+
+	<appender name="OUTPUT" class="ch.qos.logback.core.FileAppender">
+	    <file>target/cucumber.log</file>
+		<encoder>
+			<pattern>[%level] %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<root level="DEBUG">
+	    <appender-ref ref="OUTPUT"/>
+	</root>
+</configuration>

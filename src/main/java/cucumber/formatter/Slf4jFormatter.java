@@ -2,6 +2,7 @@ package cucumber.formatter;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+import freemarker.template.TemplateException;
 import gherkin.formatter.Formatter;
 import gherkin.formatter.Reporter;
 import gherkin.formatter.model.Background;
@@ -13,20 +14,16 @@ import gherkin.formatter.model.Scenario;
 import gherkin.formatter.model.ScenarioOutline;
 import gherkin.formatter.model.Step;
 
+import java.io.IOException;
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.base.Strings;
-
 public class Slf4jFormatter implements Reporter, Formatter {
-	private static final char PAD = '*';
-	private static final String LINE = Strings.padStart("", 80, PAD);
-	private static final String PFIX = PAD + " ";
 	private final Logger logger = LoggerFactory.getLogger(Slf4jFormatter.class);
 	private final Appendable out;
 	private final Configuration configuration;
@@ -63,7 +60,7 @@ public class Slf4jFormatter implements Reporter, Formatter {
 
 	@Override
 	public void done() {
-		logIfHasOutcome("*** DONE. ");
+		logIfHasOutcome(makeString("done", new HashMap<String, Object>()));
 	}
 
 	@Override
@@ -167,9 +164,16 @@ public class Slf4jFormatter implements Reporter, Formatter {
 	}
 
 	private String makeString(String templateName, Map<String, Object> model) {
-		Template template = configuration.getTemplate(templateName + ".ftl");
-		StringWriter stringWriter = new StringWriter();
-		template.process(model, stringWriter);
-		return stringWriter.toString();
+		try {
+			if (logger.isDebugEnabled()) {
+				logger.debug("Loading template {}\n\tUsing model: {}", templateName, model);
+			}
+			Template template = configuration.getTemplate(templateName + ".ftl");
+			StringWriter stringWriter = new StringWriter();
+			template.process(model, stringWriter);
+			return stringWriter.toString();
+		} catch (IOException | TemplateException e) {
+			return null;
+		}
 	}
 }

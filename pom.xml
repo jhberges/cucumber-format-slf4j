@@ -18,6 +18,7 @@
 		<guava-version>15.0</guava-version>
 		<freemarker-version>2.3.20</freemarker-version>
 		<junit-version>4.11</junit-version>
+		<logback-version>1.0.13</logback-version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -50,6 +51,26 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>${cucumber-jvm-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>ch.qos.logback</groupId>
+		    <artifactId>logback-classic</artifactId>
+		    <version>${logback-version}</version>
+		    <scope>test</scope>
 		</dependency>
 	</dependencies>
+	<build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+	    	    
+	</build>
 </project>
