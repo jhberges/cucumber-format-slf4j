@@ -14,7 +14,7 @@
 	<url>https://github.com/jhberges/cucumber-format-slf4j</url>
 	<scm>
 		<url>scm:git:https://github.com/jhberges/cucumber-format-slf4j.git</url>
-		<developerConnection>scmg:git:https://github.com/jhberges/cucumber-format-slf4j.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/jhberges/cucumber-format-slf4j.git</developerConnection>
 	</scm>
 	<licenses>
 		<license>
