@@ -1,1 +1,2 @@
-\n  * Scenario @ line ${scenario.line}
+
+*** Scenario @ line ${scenario.line}

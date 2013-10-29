@@ -150,6 +150,7 @@ public class Slf4jFormatter implements Reporter, Formatter {
 	public void match(final Match match) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("match", match);
+		model.put("matchAsMap", match.toMap());
 		logIfHasOutcome(makeString("match", model));
 	}
 
