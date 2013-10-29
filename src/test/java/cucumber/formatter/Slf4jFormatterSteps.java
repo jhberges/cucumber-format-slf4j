@@ -3,6 +3,7 @@ package cucumber.formatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -49,4 +50,23 @@ public class Slf4jFormatterSteps {
 		logger.info("stuff is logged");
 	}
 
+	@Given("^that theres data$")
+	public void that_theres_data(DataTable arg1) throws Throwable {
+		logger.info("that_theres_data: {}", arg1);
+	}
+
+	@Given("^some (\\d+)$")
+	public void some(int arg1) throws Throwable {
+		logger.info("some: {}", arg1);
+	}
+
+	@When("^\"([^\"]*)\" happens$")
+	public void happens(String arg1) throws Throwable {
+		logger.info("happens: {}", arg1);
+	}
+
+	@Then("^Aliens$")
+	public void Aliens() throws Throwable {
+		logger.info("Aliens");
+	}
 }
