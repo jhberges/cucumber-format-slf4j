@@ -49,6 +49,7 @@ public class Slf4jFormatter implements Reporter, Formatter {
 	public void background(final Background background) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("background", background);
+		model.put("backgroundAsMap", background.toMap());
 		logIfHasOutcome(makeString("background", model));
 	}
 

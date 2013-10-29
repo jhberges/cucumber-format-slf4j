@@ -10,7 +10,19 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class Slf4jFormatterSteps {
-	private final Logger logger = LoggerFactory.getLogger(Slf4jFormatterSteps.class);
+	private final Logger logger = LoggerFactory
+			.getLogger(Slf4jFormatterSteps.class);
+
+	@Given("^that the Cucumber tests are run in the same CI server$")
+	public void that_the_Cucumber_tests_are_run_in_the_same_CI_server()
+			throws Throwable {
+		logger.info("that_the_Cucumber_tests_are_run_in_the_same_CI_server");
+	}
+
+	@Given("^the logging is set up correctly$")
+	public void the_logging_is_set_up_correctly() throws Throwable {
+		logger.info("the_logging_is_set_up_correctly");
+	}
 
 	@Before
 	public void before() {
@@ -24,7 +36,7 @@ public class Slf4jFormatterSteps {
 
 	@Given("^that a logger has been installed$")
 	public void that_a_logger_has_been_installed() throws Throwable {
-	    logger.info("that_a_logger_has_been_installed");
+		logger.info("that_a_logger_has_been_installed");
 	}
 
 	@When("^Cucumber executes$")
@@ -36,7 +48,5 @@ public class Slf4jFormatterSteps {
 	public void stuff_is_logged() throws Throwable {
 		logger.info("stuff is logged");
 	}
-
-
 
 }
