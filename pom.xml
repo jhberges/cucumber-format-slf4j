@@ -90,7 +90,8 @@
 		<profile>
 			<activation>
 				<property>
-					RELEASE
+				    <name>build</name>
+					<value>RELEASE</value>
 				</property>
 			</activation>
 			<build>
