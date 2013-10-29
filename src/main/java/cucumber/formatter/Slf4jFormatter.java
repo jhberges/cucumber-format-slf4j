@@ -103,6 +103,7 @@ public class Slf4jFormatter implements Reporter, Formatter {
 	public void examples(final Examples examples) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("examples", examples);
+		model.put("examplesAsMaps", examples.toMap());
 		logIfHasOutcome(makeString("examples", model));
 	}
 
