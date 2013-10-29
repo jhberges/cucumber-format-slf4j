@@ -1,4 +1,4 @@
 Before:
 *** ${match.location}
   * Status  : ${result.status}
-  * Duration: ${result.duration}
+  * Duration: ${result.duration} ms

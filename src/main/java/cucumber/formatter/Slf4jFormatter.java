@@ -39,7 +39,9 @@ public class Slf4jFormatter implements Reporter, Formatter {
 	public void after(final Match match, final Result result) {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("match", match);
+		model.put("matchAsMap", match.toMap());
 		model.put("result", result);
+		model.put("resultAsMap", result.toMap());
 		logIfHasOutcome(makeString("after", model));
 	}
 
