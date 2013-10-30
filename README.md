@@ -6,6 +6,8 @@ A Cucumber(-jvm) formatter that logs outcomes etc to your SLF4J setup.
 
 How to use
 ==========
+*Note* Required Java7 or above!
+
 In your ```@CucumberOptions```:
     
     @RunWith(Cucumber.class)
